@@ -8,7 +8,7 @@
     <ProjectGuid>{EDE70767-DB6C-4F5B-BDA9-07B6828B8B12}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TornadoCapture_v2</RootNamespace>
+    <RootNamespace>TornadoCapture</RootNamespace>
     <AssemblyName>TornadoCapture</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -137,6 +137,9 @@
     <Content Include="Setup\box16x.ico" />
     <Content Include="Setup\license.txt" />
     <Content Include="Setup\tc2.iss" />
+    <Content Include="tessdata\tessdata_readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="x64\liblept168.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -153,9 +156,7 @@
     <None Include="Resources\fenster_allesQ.png" />
     <None Include="Resources\fenster_auswahlbox3.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="tessdata\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

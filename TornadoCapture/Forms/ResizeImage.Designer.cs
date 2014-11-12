@@ -1,4 +1,4 @@
-﻿namespace TornadoCapture_v2.Forms
+﻿namespace TornadoCapture.Forms
 {
     partial class ResizeImage
     {

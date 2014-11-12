@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace TornadoCapture_v2.Klassen
+#endregion
+
+namespace TornadoCapture.Klassen
 {
     internal sealed class RegGlobaleHotkey
     {
@@ -19,12 +23,6 @@ namespace TornadoCapture_v2.Klassen
             _id = GetHashCode();
         }
 
-        [DllImport("user32.dll")]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
-
-        [DllImport("user32.dll")]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
         public override int GetHashCode()
         {
             return _modifier ^ _key ^ _hWnd.ToInt32();
@@ -35,9 +33,15 @@ namespace TornadoCapture_v2.Klassen
             return RegisterHotKey(_hWnd, _id, _modifier, _key);
         }
 
+        [DllImport("user32.dll")]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+
         public bool Unregister()
         {
             return UnregisterHotKey(_hWnd, _id);
         }
+
+        [DllImport("user32.dll")]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
     }
 }

@@ -1,3 +1,5 @@
+#region
+
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -5,9 +7,10 @@ using System.Drawing.Imaging;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using TornadoCapture_v2.Klassen;
 
-namespace TornadoCapture_v2
+#endregion
+
+namespace TornadoCapture
 {
     public partial class Square : Form
     {
@@ -36,13 +39,35 @@ namespace TornadoCapture_v2
             Cursor = Cursors.Hand;
         }
 
-        //Get the device component of the window to allow drawing on the title bar and frame
-        [DllImport("User32.dll")]
-        public static extern IntPtr GetWindowDC(IntPtr hWnd);
+        public Image CaptureScreen()
+        {
+            if (backupRect.Width <= 0 || backupRect.Height <= 0)
+            {
+                return null;
+            }
 
-        //Releases the Device Component after it's been used
-        [DllImport("User32.dll")]
-        public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+            var bmp = new Bitmap(screenWidth, screenHeight);
+            using (var g = Graphics.FromImage(bmp))
+            {
+                g.CopyFromScreen(screenLeft, screenTop, 0, 0, bmp.Size);
+            }
+            return bmp.Clone(backupRect, PixelFormat.Undefined);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ThreadHelper.CaptureIsOn = false;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
+        //Get the device component of the window to allow drawing on the title bar and frame
 
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -52,7 +77,7 @@ namespace TornadoCapture_v2
             initialY = e.Y;
             IntPtr m_WndHdc;
             m_WndHdc = GetWindowDC(Handle);
-            Graphics g = Graphics.FromHdc(m_WndHdc);
+            var g = Graphics.FromHdc(m_WndHdc);
             g.Clear(Color.LightGray);
             Invalidate();
             g.Dispose();
@@ -64,7 +89,7 @@ namespace TornadoCapture_v2
             if (isDown)
             {
                 m_WndHdc = GetWindowDC(Handle);
-                Graphics g = Graphics.FromHdc(m_WndHdc);
+                var g = Graphics.FromHdc(m_WndHdc);
 
                 var EraserPen = new Pen(BackColor, 10);
                 var eraserBrush = new SolidBrush(BackColor);
@@ -93,6 +118,9 @@ namespace TornadoCapture_v2
             MakeScreenshot();
         }
 
+        [DllImport("User32.dll")]
+        public static extern IntPtr GetWindowDC(IntPtr hWnd);
+
         private void MakeScreenshot()
         {
             if (ThreadHelper.PressedKey == 0x430003)
@@ -102,7 +130,7 @@ namespace TornadoCapture_v2
                 {
                     Clipboard.SetImage(ThreadHelper.MyScreenshot);
                 }
-                
+
                 Hide();
             }
             else
@@ -127,33 +155,8 @@ namespace TornadoCapture_v2
             }
         }
 
-        public Image CaptureScreen()
-        {
-            if (backupRect.Width <= 0 || backupRect.Height <= 0)
-            {
-                return null;
-            }
-
-            var bmp = new Bitmap(screenWidth, screenHeight);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.CopyFromScreen(screenLeft, screenTop, 0, 0, bmp.Size);
-            }
-            return bmp.Clone(backupRect, PixelFormat.Undefined);
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ThreadHelper.CaptureIsOn = false;
-        }
-
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
-            }
-        }
+        [DllImport("User32.dll")]
+        public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
 
         private void Square_Load(object sender, EventArgs e)
         {

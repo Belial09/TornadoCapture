@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace TornadoCapture_v2.Klassen
+#endregion
+
+namespace TornadoCapture.Klassen
 {
     public class WinApi
     {
@@ -24,14 +28,14 @@ namespace TornadoCapture_v2.Klassen
         [DllImport("user32.dll", EntryPoint = "GetSystemMetrics")]
         public static extern int GetSystemMetrics(int which);
 
-        [DllImport("user32.dll")]
-        public static extern void SetWindowPos(IntPtr hwnd, IntPtr hwndInsertAfter, int x, int y, int width, int height,
-            uint flags);
-
         public static void SetWinFullScreen(IntPtr hwnd)
         {
             SetWindowPos(hwnd, HwndTop, SystemInformation.VirtualScreen.Left, SystemInformation.VirtualScreen.Top,
                 SystemInformation.VirtualScreen.Width, SystemInformation.VirtualScreen.Height, SwpShowwindow);
         }
+
+        [DllImport("user32.dll")]
+        public static extern void SetWindowPos(IntPtr hwnd, IntPtr hwndInsertAfter, int x, int y, int width, int height,
+            uint flags);
     }
 }

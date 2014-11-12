@@ -1,10 +1,13 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using TornadoCapture_v2.Klassen;
 
-namespace TornadoCapture_v2.Forms
+#endregion
+
+namespace TornadoCapture.Forms
 {
     public partial class ResizeImage : Form
     {
@@ -14,22 +17,6 @@ namespace TornadoCapture_v2.Forms
         public ResizeImage()
         {
             InitializeComponent();
-        }
-
-        public void SetPicture(Image pic, Mainform form)
-        {
-            MyPicture = pic;
-            MyForm = form;
-        }
-
-        private void ResizeImage_Load(object sender, EventArgs e)
-        {
-            lblCurrentSize.Text = MyPicture.Size.Width.ToString(CultureInfo.InvariantCulture) + @" x " +
-                                  MyPicture.Size.Height.ToString(CultureInfo.InvariantCulture);
-            lblNewSize.Text = MyPicture.Size.Width.ToString(CultureInfo.InvariantCulture) + @" x " +
-                              MyPicture.Size.Height.ToString(CultureInfo.InvariantCulture);
-            txtWidthStatic.Text = MyPicture.Size.Width.ToString(CultureInfo.InvariantCulture);
-            txtHeightStatic.Text = MyPicture.Size.Height.ToString(CultureInfo.InvariantCulture);
         }
 
         private void NumbersChecked(Object o, KeyPressEventArgs e)
@@ -51,27 +38,20 @@ namespace TornadoCapture_v2.Forms
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void ResizeImage_Load(object sender, EventArgs e)
         {
-            if (rbtStatic.Checked)
-            {
-                lblNewSize.Text = txtWidthStatic.Text.ToString(CultureInfo.InvariantCulture) + @" x " +
-                                  txtHeightStatic.Text.ToString(CultureInfo.InvariantCulture);
-            }
-            else if (rbtPercent.Checked)
-            {
-                double width = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Width)/100);
-                width = width*Convert.ToDouble(txtPercentWidth.Text);
-                width = Math.Round(width);
+            lblCurrentSize.Text = MyPicture.Size.Width.ToString(CultureInfo.InvariantCulture) + @" x " +
+                                  MyPicture.Size.Height.ToString(CultureInfo.InvariantCulture);
+            lblNewSize.Text = MyPicture.Size.Width.ToString(CultureInfo.InvariantCulture) + @" x " +
+                              MyPicture.Size.Height.ToString(CultureInfo.InvariantCulture);
+            txtWidthStatic.Text = MyPicture.Size.Width.ToString(CultureInfo.InvariantCulture);
+            txtHeightStatic.Text = MyPicture.Size.Height.ToString(CultureInfo.InvariantCulture);
+        }
 
-                double height = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Height)/100);
-                height = height*Convert.ToDouble(txtPercentHeight.Text);
-                height = Math.Round(height);
-
-                lblNewSize.Text = width.ToString(CultureInfo.InvariantCulture);
-                lblNewSize.Text += @" x ";
-                lblNewSize.Text += height.ToString(CultureInfo.InvariantCulture);
-            }
+        public void SetPicture(Image pic, Mainform form)
+        {
+            MyPicture = pic;
+            MyForm = form;
         }
 
         private void SetRadioButton(object sender, EventArgs e)
@@ -112,11 +92,11 @@ namespace TornadoCapture_v2.Forms
             }
             else if (rbtPercent.Checked)
             {
-                double width = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Width)/100);
+                var width = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Width)/100);
                 width = width*Convert.ToDouble(txtPercentWidth.Text);
                 width = Math.Round(width);
 
-                double height = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Height)/100);
+                var height = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Height)/100);
                 height = height*Convert.ToDouble(txtPercentHeight.Text);
                 height = Math.Round(height);
                 newSize = new Size(Convert.ToInt32(width), Convert.ToInt32(height));
@@ -132,6 +112,29 @@ namespace TornadoCapture_v2.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (rbtStatic.Checked)
+            {
+                lblNewSize.Text = txtWidthStatic.Text.ToString(CultureInfo.InvariantCulture) + @" x " +
+                                  txtHeightStatic.Text.ToString(CultureInfo.InvariantCulture);
+            }
+            else if (rbtPercent.Checked)
+            {
+                var width = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Width)/100);
+                width = width*Convert.ToDouble(txtPercentWidth.Text);
+                width = Math.Round(width);
+
+                var height = Convert.ToDouble(Convert.ToDouble(MyPicture.Size.Height)/100);
+                height = height*Convert.ToDouble(txtPercentHeight.Text);
+                height = Math.Round(height);
+
+                lblNewSize.Text = width.ToString(CultureInfo.InvariantCulture);
+                lblNewSize.Text += @" x ";
+                lblNewSize.Text += height.ToString(CultureInfo.InvariantCulture);
+            }
         }
     }
 }

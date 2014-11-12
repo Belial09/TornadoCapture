@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿#region
+
+using System;
 using System.Windows.Forms;
 
-namespace TornadoCapture_v2
+#endregion
+
+namespace TornadoCapture
 {
     public partial class OCRMask : Form
     {
@@ -19,9 +17,9 @@ namespace TornadoCapture_v2
             _result = result;
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void OCRMask_Load(object sender, EventArgs e)
         {
-            this.Close();
+            textresult.Text = _result;
         }
 
         private void buttonClipboard_Click(object sender, EventArgs e)
@@ -29,10 +27,9 @@ namespace TornadoCapture_v2
             Clipboard.SetText(textresult.Text);
         }
 
-        private void OCRMask_Load(object sender, EventArgs e)
+        private void buttonClose_Click(object sender, EventArgs e)
         {
-            textresult.Text = _result;
+            Close();
         }
-
     }
 }

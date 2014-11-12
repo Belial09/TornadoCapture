@@ -1,8 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-using TornadoCapture_v2.Properties;
+﻿#region
 
-namespace TornadoCapture_v2
+using System;
+using System.Windows.Forms;
+
+#endregion
+
+namespace TornadoCapture
 {
     public partial class Infoform : Form
     {
@@ -23,6 +26,11 @@ namespace TornadoCapture_v2
 
         public InfoBoxAction Action { get; set; }
 
+        private void Infoform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Started = false;
+        }
+
         private void Infoform_Load(object sender, EventArgs e)
         {
             checkboxShowNextTime.Checked = Settings.Default.ShowInfoAtStartup;
@@ -42,11 +50,6 @@ namespace TornadoCapture_v2
                 Settings.Default.ShowInfoAtStartup = checkboxShowNextTime.Checked;
                 Settings.Default.Save();
             }
-        }
-
-        private void Infoform_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Started = false;
         }
     }
 }

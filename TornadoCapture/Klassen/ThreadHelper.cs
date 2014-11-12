@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections;
 using System.Drawing;
 
-namespace TornadoCapture_v2.Klassen
+#endregion
+
+namespace TornadoCapture.Klassen
 {
     internal static class ThreadHelper
     {

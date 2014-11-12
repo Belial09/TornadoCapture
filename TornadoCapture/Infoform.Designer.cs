@@ -1,4 +1,4 @@
-﻿namespace TornadoCapture_v2
+﻿namespace TornadoCapture
 {
     partial class Infoform
     {

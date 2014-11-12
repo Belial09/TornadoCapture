@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Windows.Forms;
 
-namespace TornadoCapture_v2
+#endregion
+
+namespace TornadoCapture
 {
     internal static class Program
     {

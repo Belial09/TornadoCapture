@@ -1,6 +1,7 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -10,12 +11,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Tesseract;
-using TornadoCapture_v2.Forms;
-using TornadoCapture_v2.Klassen;
-using TornadoCapture_v2.Properties;
 using ImageFormat = System.Drawing.Imaging.ImageFormat;
 
-namespace TornadoCapture_v2
+#endregion
+
+namespace TornadoCapture
 {
     public partial class Mainform : Form
     {
@@ -55,7 +55,7 @@ namespace TornadoCapture_v2
             var buttonTags = Enum.GetNames(typeof (Enums.OcrLanguages));
             oCRToolStripMenuItem.DropDownItems.Clear();
             buttonTags = buttonTags.OrderBy(x => x.ToString()).ToArray();
-            
+
             foreach (var buttonTag in buttonTags)
             {
                 var enumval = Enums.EnumFromString<Enums.OcrLanguages>(buttonTag);
@@ -64,46 +64,45 @@ namespace TornadoCapture_v2
                 var fileToCheck = String.Format("{0}.traineddata", enumval.ToString().ToLower());
                 if (Directory.GetFiles(checkpath, fileToCheck).Any())
                 {
-                    var toolstripItem = new ToolStripMenuItem(desc, null, ToolStripMenuItem_Click) { Tag = enumval };
+                    var toolstripItem = new ToolStripMenuItem(desc, null, ToolStripMenuItem_Click) {Tag = enumval};
                     oCRToolStripMenuItem.DropDownItems.Add(toolstripItem);
                 }
             }
-
         }
 
         public static bool InfoStarted { get; set; }
 
-        [DllImport("user32.dll")]
-        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-
-        protected override void WndProc(ref Message m)
+        private void DoOCR(string tag)
         {
-            //STRG + C =  llparam=0x430003
-            //STRG + D =  lparam=0x440003
-            if (m.Msg == WmHotkeyMsgID && ThreadHelper.CaptureIsOn == false)
+            if (tag != string.Empty)
             {
-                if (m.LParam == (IntPtr) 0x440003)
+                try
                 {
-                    ThreadHelper.PressedKey = 0x440003;
-                    ThreadHelper.CaptureIsOn = true;
-                    var mySelection = new Square();
-                    mySelection.ShowDialog();
-
-                    ThreadHelper.CaptureIsOn = false;
+                    var path = Path.Combine(Application.StartupPath, @"tessdata");
+                    Console.WriteLine(path);
+                    using (var engine = new TesseractEngine(path, tag.ToLower(), EngineMode.Default))
+                    {
+                        using (var img = new Bitmap(pictureBox1.Image))
+                        {
+                            using (var page = engine.Process(img))
+                            {
+                                var text = page.GetText();
+                                if (text != String.Empty)
+                                {
+                                    using (var frm = new OCRMask(text))
+                                    {
+                                        frm.ShowDialog();
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-                else if (m.LParam == (IntPtr) 0x430003)
+                catch (Exception ex)
                 {
-                    ThreadHelper.PressedKey = 0x430003;
-                    ThreadHelper.CaptureIsOn = true;
-                    var mySelection = new Square();
-                    mySelection.ShowDialog();
-                    ThreadHelper.CaptureIsOn = false;
+                    Console.WriteLine(ex);
                 }
             }
-            base.WndProc(ref m);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -115,47 +114,15 @@ namespace TornadoCapture_v2
             _myRegisteredHotkeys = null;
         }
 
-        private void Mainform_Load(object sender, EventArgs e)
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        private void Mainform_KeyDown(object sender, KeyEventArgs e)
         {
-            if (ThreadHelper.MyScreenshot != null)
+            if (e.Control && e.KeyCode == Keys.C)
             {
-                pictureBox1.Image = ThreadHelper.MyScreenshot;
+                Clipboard.SetImage(pictureBox1.Image);
             }
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            _info.Close();
-            Close();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            var resources = new ComponentResourceManager(typeof (Mainform));
-
-            if (ThreadHelper.CaptureForms == null) return;
-            foreach (Form form in ThreadHelper.CaptureForms)
-            {
-                form.FormBorderStyle = FormBorderStyle.Sizable;
-                form.Icon = ((Icon) (resources.GetObject("notifyIcon1.Icon")));
-            }
-        }
-
-        private void Rotate90_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = ImageManipulation.RotateImage(pictureBox1.Image, ImageManipulation.RotateMode.Ninetee);
-        }
-
-        private void Rotate180_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = ImageManipulation.RotateImage(pictureBox1.Image,
-                ImageManipulation.RotateMode.OneHundretEighty);
-        }
-
-        private void Rotate270_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = ImageManipulation.RotateImage(pictureBox1.Image,
-                ImageManipulation.RotateMode.TwoHundredSeventy);
         }
 
         private void Mainform_KeyPress(object sender, KeyPressEventArgs e)
@@ -196,19 +163,105 @@ namespace TornadoCapture_v2
             }
         }
 
-        private void zoomToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Mainform_Load(object sender, EventArgs e)
         {
-            var myItem = (ToolStripMenuItem) sender;
-            if (pictureBox1.SizeMode == PictureBoxSizeMode.Zoom)
+            if (ThreadHelper.MyScreenshot != null)
             {
-                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-                myItem.Checked = false;
+                pictureBox1.Image = ThreadHelper.MyScreenshot;
             }
-            else if (pictureBox1.SizeMode == PictureBoxSizeMode.CenterImage)
+        }
+
+        private void Rotate180_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = ImageManipulation.RotateImage(pictureBox1.Image,
+                ImageManipulation.RotateMode.OneHundretEighty);
+        }
+
+        private void Rotate270_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = ImageManipulation.RotateImage(pictureBox1.Image,
+                ImageManipulation.RotateMode.TwoHundredSeventy);
+        }
+
+        private void Rotate90_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = ImageManipulation.RotateImage(pictureBox1.Image, ImageManipulation.RotateMode.Ninetee);
+        }
+
+        [DllImport("user32.dll")]
+        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        private void ShowInfoBox()
+        {
+            if (_info != null && InfoStarted == false && _info.Started == false)
             {
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                myItem.Checked = true;
+                InfoStarted = true;
+                _info.ShowDialog();
+
+                if (_info != null && _info.Action == Infoform.InfoBoxAction.Capture2Clipboard)
+                {
+                    var mySelection = new Square();
+                    mySelection.ShowDialog();
+                }
             }
+        }
+
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var realSender = sender as ToolStripMenuItem;
+            if (realSender != null)
+            {
+                DoOCR(realSender.Tag.ToString());
+            }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            //STRG + C =  llparam=0x430003
+            //STRG + D =  lparam=0x440003
+            if (m.Msg == WmHotkeyMsgID && ThreadHelper.CaptureIsOn == false)
+            {
+                if (m.LParam == (IntPtr) 0x440003)
+                {
+                    ThreadHelper.PressedKey = 0x440003;
+                    ThreadHelper.CaptureIsOn = true;
+                    var mySelection = new Square();
+                    mySelection.ShowDialog();
+
+                    ThreadHelper.CaptureIsOn = false;
+                }
+                else if (m.LParam == (IntPtr) 0x430003)
+                {
+                    ThreadHelper.PressedKey = 0x430003;
+                    ThreadHelper.CaptureIsOn = true;
+                    var mySelection = new Square();
+                    mySelection.ShowDialog();
+                    ThreadHelper.CaptureIsOn = false;
+                }
+            }
+            base.WndProc(ref m);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _info.Close();
+            Close();
+        }
+
+        private void copyToClipboardToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(pictureBox1.Image);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _info.Close();
+            Close();
+        }
+
+        private void flipBoth_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = ImageManipulation.FlipImage(pictureBox1.Image, ImageManipulation.FlipMode.Both);
         }
 
         private void flipHorizontal_Click(object sender, EventArgs e)
@@ -221,33 +274,18 @@ namespace TornadoCapture_v2
             pictureBox1.Image = ImageManipulation.FlipImage(pictureBox1.Image, ImageManipulation.FlipMode.Vertical);
         }
 
-        private void flipBoth_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = ImageManipulation.FlipImage(pictureBox1.Image, ImageManipulation.FlipMode.Both);
-        }
-
         private void invertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = ImageManipulation.InvertImage(pictureBox1.Image);
         }
 
-        private void copyToClipboardToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
-            Clipboard.SetImage(pictureBox1.Image);
-        }
-
-        private void Mainform_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.C)
+            if (e.Button == MouseButtons.Left)
             {
-                Clipboard.SetImage(pictureBox1.Image);
+                InfoStarted = false;
+                ShowInfoBox();
             }
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            _info.Close();
-            Close();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -280,6 +318,11 @@ namespace TornadoCapture_v2
             }
         }
 
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(pictureBox1.Image, 0, 0);
+        }
+
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             printDocument1.OriginAtMargins = true;
@@ -290,11 +333,6 @@ namespace TornadoCapture_v2
             }
         }
 
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(pictureBox1.Image, 0, 0);
-        }
-
         private void resizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var myResizeForm = new ResizeImage();
@@ -302,18 +340,15 @@ namespace TornadoCapture_v2
             myResizeForm.ShowDialog();
         }
 
-        private void ShowInfoBox()
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (_info != null && InfoStarted == false && _info.Started == false)
-            {
-                InfoStarted = true;
-                _info.ShowDialog();
+            var resources = new ComponentResourceManager(typeof (Mainform));
 
-                if (_info != null && _info.Action == Infoform.InfoBoxAction.Capture2Clipboard)
-                {
-                    var mySelection = new Square();
-                    mySelection.ShowDialog();
-                }
+            if (ThreadHelper.CaptureForms == null) return;
+            foreach (Form form in ThreadHelper.CaptureForms)
+            {
+                form.FormBorderStyle = FormBorderStyle.Sizable;
+                form.Icon = ((Icon) (resources.GetObject("notifyIcon1.Icon")));
             }
         }
 
@@ -322,56 +357,19 @@ namespace TornadoCapture_v2
             Process.Start(Website);
         }
 
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        private void zoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            var myItem = (ToolStripMenuItem) sender;
+            if (pictureBox1.SizeMode == PictureBoxSizeMode.Zoom)
             {
-                InfoStarted = false;
-                ShowInfoBox();
+                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+                myItem.Checked = false;
+            }
+            else if (pictureBox1.SizeMode == PictureBoxSizeMode.CenterImage)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                myItem.Checked = true;
             }
         }
-
-        private void ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var realSender = sender as ToolStripMenuItem;
-            if (realSender != null)
-            {
-                DoOCR(realSender.Tag.ToString());
-            }
-        }
-
-        private void DoOCR(string tag)
-        {
-            if (tag != string.Empty)
-            {
-                try
-                {
-                    var path = Path.Combine(Application.StartupPath, @"tessdata");
-                    Console.WriteLine(path);
-                    using (var engine = new TesseractEngine(path, tag.ToLower(), EngineMode.Default))
-                    {
-                        using (var img = new Bitmap(pictureBox1.Image))
-                        {
-                            using (var page = engine.Process(img))
-                            {
-                                var text = page.GetText();
-                                if (text != String.Empty)
-                                {
-                                    using (var frm = new OCRMask(text))
-                                    {
-                                        frm.ShowDialog();
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-            } 
-        }
-
     }
 }
