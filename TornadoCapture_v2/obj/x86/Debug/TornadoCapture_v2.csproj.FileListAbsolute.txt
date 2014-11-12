@@ -1,0 +1,148 @@
+C:\Users\MF.HTK\Desktop\TornadoCapture\TornadoCapture.exe.config
+C:\Users\MF.HTK\Desktop\TornadoCapture\TornadoCapture.exe
+C:\Users\MF.HTK\Desktop\TornadoCapture\TornadoCapture.pdb
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Infoform.resources
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Mainform.resources
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Properties.Resources.resources
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Square.resources
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.csproj.GenerateResource.Cache
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.exe
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.pdb
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.Kopie von Square.resources
+C:\Users\MF.HTK\Documents\Visual Studio 2012\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.ResizeImage.resources
+C:\Users\MF\Desktop\TornadoCapture\TornadoCapture.exe.config
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.exe
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.pdb
+C:\Users\MF\Desktop\TornadoCapture\TornadoCapture.exe
+C:\Users\MF\Desktop\TornadoCapture\TornadoCapture.pdb
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.csprojResolveAssemblyReference.cache
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.Kopie von Square.resources
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.ResizeImage.resources
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Infoform.resources
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Mainform.resources
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Properties.Resources.resources
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Square.resources
+C:\Users\MF\Documents\Visual Studio 2013\Projects\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.csproj.GenerateResource.Cache
+D:\Desktop\TornadoCapture\TornadoCapture.exe.config
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.exe
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.pdb
+D:\Desktop\TornadoCapture\TornadoCapture.exe
+D:\Desktop\TornadoCapture\TornadoCapture.pdb
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.Kopie von Square.resources
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.ResizeImage.resources
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Infoform.resources
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Mainform.resources
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Properties.Resources.resources
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Square.resources
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.csproj.GenerateResource.Cache
+D:\Desktop\TornadoCapture\x64\liblept168.dll
+D:\Desktop\TornadoCapture\x64\libtesseract302.dll
+D:\Desktop\TornadoCapture\x86\liblept168.dll
+D:\Desktop\TornadoCapture\x86\libtesseract302.dll
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.OCRMask.resources
+D:\Desktop\TornadoCapture\tessdata\afr.traineddata
+D:\Desktop\TornadoCapture\tessdata\ara.cube.bigrams
+D:\Desktop\TornadoCapture\tessdata\ara.cube.fold
+D:\Desktop\TornadoCapture\tessdata\ara.cube.lm
+D:\Desktop\TornadoCapture\tessdata\ara.cube.nn
+D:\Desktop\TornadoCapture\tessdata\ara.cube.params
+D:\Desktop\TornadoCapture\tessdata\ara.cube.size
+D:\Desktop\TornadoCapture\tessdata\ara.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\ara.traineddata
+D:\Desktop\TornadoCapture\tessdata\aze.traineddata
+D:\Desktop\TornadoCapture\tessdata\bel.traineddata
+D:\Desktop\TornadoCapture\tessdata\ben.traineddata
+D:\Desktop\TornadoCapture\tessdata\bul.traineddata
+D:\Desktop\TornadoCapture\tessdata\cat.traineddata
+D:\Desktop\TornadoCapture\tessdata\ces.traineddata
+D:\Desktop\TornadoCapture\tessdata\chi_sim.traineddata
+D:\Desktop\TornadoCapture\tessdata\chi_tra.traineddata
+D:\Desktop\TornadoCapture\tessdata\dan-frak.traineddata
+D:\Desktop\TornadoCapture\tessdata\dan.traineddata
+D:\Desktop\TornadoCapture\tessdata\deu-frak.traineddata
+D:\Desktop\TornadoCapture\tessdata\deu.traineddata
+D:\Desktop\TornadoCapture\tessdata\ell.traineddata
+D:\Desktop\TornadoCapture\tessdata\eng.cube.bigrams
+D:\Desktop\TornadoCapture\tessdata\eng.cube.fold
+D:\Desktop\TornadoCapture\tessdata\eng.cube.lm
+D:\Desktop\TornadoCapture\tessdata\eng.cube.nn
+D:\Desktop\TornadoCapture\tessdata\eng.cube.params
+D:\Desktop\TornadoCapture\tessdata\eng.cube.size
+D:\Desktop\TornadoCapture\tessdata\eng.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\eng.tesseract_cube.nn
+D:\Desktop\TornadoCapture\tessdata\eng.traineddata
+D:\Desktop\TornadoCapture\tessdata\epo.traineddata
+D:\Desktop\TornadoCapture\tessdata\equ.traineddata
+D:\Desktop\TornadoCapture\tessdata\est.traineddata
+D:\Desktop\TornadoCapture\tessdata\eus.traineddata
+D:\Desktop\TornadoCapture\tessdata\fin.traineddata
+D:\Desktop\TornadoCapture\tessdata\fra.cube.bigrams
+D:\Desktop\TornadoCapture\tessdata\fra.cube.fold
+D:\Desktop\TornadoCapture\tessdata\fra.cube.lm
+D:\Desktop\TornadoCapture\tessdata\fra.cube.nn
+D:\Desktop\TornadoCapture\tessdata\fra.cube.params
+D:\Desktop\TornadoCapture\tessdata\fra.cube.size
+D:\Desktop\TornadoCapture\tessdata\fra.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\fra.tesseract_cube.nn
+D:\Desktop\TornadoCapture\tessdata\fra.traineddata
+D:\Desktop\TornadoCapture\tessdata\frk.traineddata
+D:\Desktop\TornadoCapture\tessdata\heb.traineddata
+D:\Desktop\TornadoCapture\tessdata\hin.cube.bigrams
+D:\Desktop\TornadoCapture\tessdata\hin.cube.fold
+D:\Desktop\TornadoCapture\tessdata\hin.cube.lm
+D:\Desktop\TornadoCapture\tessdata\hin.cube.nn
+D:\Desktop\TornadoCapture\tessdata\hin.cube.params
+D:\Desktop\TornadoCapture\tessdata\hin.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\hin.tesseract_cube.nn
+D:\Desktop\TornadoCapture\tessdata\hin.traineddata
+D:\Desktop\TornadoCapture\tessdata\hrv.traineddata
+D:\Desktop\TornadoCapture\tessdata\hun.traineddata
+D:\Desktop\TornadoCapture\tessdata\ind.traineddata
+D:\Desktop\TornadoCapture\tessdata\isl.traineddata
+D:\Desktop\TornadoCapture\tessdata\ita.cube.bigrams
+D:\Desktop\TornadoCapture\tessdata\ita.cube.fold
+D:\Desktop\TornadoCapture\tessdata\ita.cube.lm
+D:\Desktop\TornadoCapture\tessdata\ita.cube.nn
+D:\Desktop\TornadoCapture\tessdata\ita.cube.params
+D:\Desktop\TornadoCapture\tessdata\ita.cube.size
+D:\Desktop\TornadoCapture\tessdata\ita.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\ita.tesseract_cube.nn
+D:\Desktop\TornadoCapture\tessdata\ita.traineddata
+D:\Desktop\TornadoCapture\tessdata\ita_old.traineddata
+D:\Desktop\TornadoCapture\tessdata\jpn.traineddata
+D:\Desktop\TornadoCapture\tessdata\kor.traineddata
+D:\Desktop\TornadoCapture\tessdata\lav.traineddata
+D:\Desktop\TornadoCapture\tessdata\lit.traineddata
+D:\Desktop\TornadoCapture\tessdata\mal.traineddata
+D:\Desktop\TornadoCapture\tessdata\mkd.traineddata
+D:\Desktop\TornadoCapture\tessdata\mlt.traineddata
+D:\Desktop\TornadoCapture\tessdata\nor.traineddata
+D:\Desktop\TornadoCapture\tessdata\pol.traineddata
+D:\Desktop\TornadoCapture\tessdata\por.traineddata
+D:\Desktop\TornadoCapture\tessdata\ron.traineddata
+D:\Desktop\TornadoCapture\tessdata\rus.cube.fold
+D:\Desktop\TornadoCapture\tessdata\rus.cube.lm
+D:\Desktop\TornadoCapture\tessdata\rus.cube.nn
+D:\Desktop\TornadoCapture\tessdata\rus.cube.params
+D:\Desktop\TornadoCapture\tessdata\rus.cube.size
+D:\Desktop\TornadoCapture\tessdata\rus.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\rus.traineddata
+D:\Desktop\TornadoCapture\tessdata\slk-frak.traineddata
+D:\Desktop\TornadoCapture\tessdata\slk.traineddata
+D:\Desktop\TornadoCapture\tessdata\spa.cube.bigrams
+D:\Desktop\TornadoCapture\tessdata\spa.cube.fold
+D:\Desktop\TornadoCapture\tessdata\spa.cube.lm
+D:\Desktop\TornadoCapture\tessdata\spa.cube.nn
+D:\Desktop\TornadoCapture\tessdata\spa.cube.params
+D:\Desktop\TornadoCapture\tessdata\spa.cube.size
+D:\Desktop\TornadoCapture\tessdata\spa.cube.word-freq
+D:\Desktop\TornadoCapture\tessdata\spa.traineddata
+D:\Desktop\TornadoCapture\tessdata\spa_old.traineddata
+D:\Desktop\TornadoCapture\tessdata\sqi.traineddata
+D:\Desktop\TornadoCapture\tessdata\swa.traineddata
+D:\Desktop\TornadoCapture\tessdata\tam.traineddata
+D:\Desktop\TornadoCapture\tessdata\tha.traineddata
+D:\Desktop\TornadoCapture\tessdata\tur.traineddata
+D:\Desktop\TornadoCapture\tessdata\ukr.traineddata
+D:\Desktop\TornadoCapture\tessdata\vie.traineddata
+D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.csprojResolveAssemblyReference.cache

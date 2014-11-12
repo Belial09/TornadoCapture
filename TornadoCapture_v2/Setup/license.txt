@@ -1,0 +1,46 @@
+FREEWARE LICENSE TERMS FOR TornadoCapture 2.1.0.0 
+(for the purposes of this license document henceforth known as 'the Software')
+
+1.     Anton Philip D. Small grants you a non-exclusive license to use the Downloaded Software subject to Your 
+compliance with all of the terms and conditions of this Freeware License.
+
+2.     You are only granted a license for the machine-readable, object code portion of the 
+Software.  You will not modify, enhance, reverse engineer or otherwise alter the Software 
+from its current state.
+
+3.     You will not have any proprietary rights in and to the Software.  You acknowledge 
+and agree that Anton Philip D. Small retains all copyrights and other proprietary rights in 
+and to the Software. The Software is for private use only. For commerical use you are required to get a commercial license from Anton Philip D. Small.
+
+4.     Your license to use the Software shall be revocable by Anton Philip D. Small
+ upon written notice to you.  This license shall automatically 
+terminate upon your violation of the terms hereof or upon your use of the Software beyond the scope of 
+the license provided herein.
+
+5.     Use within the scope of this license is free of charge and no royalty or licensing fees 
+shall be payable by you.  Use beyond the scope of this license license shall 
+constitute copyright infringement.
+
+6.     This license shall be effective and bind you upon your downloading of the Software.
+
+7.      You accept the Software on an 'AS IS' and with all faults basis.  No representations and 
+warranties are made to you regarding any aspect of the Software.
+
+8.     Anton Philip D. Small HEREBY DISCLAIMS ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED, RELATIVE TO THE SOFTWARE, INCLUDING 
+BUT NOT LIMITED TO ANY WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE OR MERCHANTIBILITY.  Anton Philip D. Small 
+SHALL NOT BE LIABLE OR RESPONSIBLE FOR ANY DAMAGES, INJURIES OR LIABILITIES CAUSED DIRECTLY OR INDIRECTLY 
+FROM THE USE OF THE SOFTWARE, INCLUDING BUT NOT LIMITED TO INCIDENTAL, CONSEQUENTIAL OR SPECIAL DAMAGES.
+
+9.     This License Agreement shall be construed, interpreted and governed by the laws of the Country of 
+Germany without regard to conflicts of law provisions thereof. The exclusive forum for any disputes arising 
+out of or relating to this License Agreement shall be an appropriate national/federal or state court sitting in the country of Germany. This License Agreement shall constitute the entire Agreement between the parties hereto. 
+Any waiver or modification of this License Agreement shall only be effective if it is in writing and signed by both parties 
+hereto. If any part of this License Agreement is found invalid or unenforceable by a court of competent jurisdiction, the 
+remainder of this License Agreement shall be interpreted so as to reasonably effect the intention of the parties.
+
+10.      Anton Philip D. Small's failure to enforce any rights hereunder or its copyright in the Software shall not be 
+construed as amending this agreement or waiving any of Anton Philip D. Small's rights hereunder or under any provision of German federal law.
+
+Anton Philip D. Small
+general@easytornado.com
+
