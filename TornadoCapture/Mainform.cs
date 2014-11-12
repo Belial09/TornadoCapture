@@ -11,6 +11,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Tesseract;
+using TornadoCapture.Forms;
+using TornadoCapture.Klassen;
+using TornadoCapture.Properties;
 using ImageFormat = System.Drawing.Imaging.ImageFormat;
 
 #endregion

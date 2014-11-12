@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using TornadoCapture.Klassen;
 
 #endregion
 

@@ -46,5 +46,17 @@ namespace TornadoCapture.Properties {
                 this["DefaultOCRTessdata"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsOCRInstantPaste {
+            get {
+                return ((bool)(this["IsOCRInstantPaste"]));
+            }
+            set {
+                this["IsOCRInstantPaste"] = value;
+            }
+        }
     }
 }

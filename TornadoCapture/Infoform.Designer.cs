@@ -41,7 +41,7 @@
             // buttonDoSelect
             // 
             this.buttonDoSelect.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.buttonDoSelect.BackgroundImage = global::TornadoCapture_v2.Properties.Resources.fenster_auswahlbox3;
+            this.buttonDoSelect.BackgroundImage = global::TornadoCapture.Properties.Resources.fenster_auswahlbox3;
             this.buttonDoSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDoSelect.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonDoSelect.Location = new System.Drawing.Point(12, 25);
