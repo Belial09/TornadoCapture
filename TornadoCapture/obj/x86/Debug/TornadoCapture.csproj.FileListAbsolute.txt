@@ -1,0 +1,19 @@
+D:\Desktop\TornadoCapture\x64\liblept168.dll
+D:\Desktop\TornadoCapture\x64\libtesseract302.dll
+D:\Desktop\TornadoCapture\x86\liblept168.dll
+D:\Desktop\TornadoCapture\x86\libtesseract302.dll
+D:\Desktop\TornadoCapture\TornadoCapture.exe.config
+D:\Desktop\TornadoCapture\TornadoCapture.exe
+D:\Desktop\TornadoCapture\TornadoCapture.pdb
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.Kopie von Square.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Forms.ResizeImage.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Infoform.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Mainform.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.OCRMask.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Properties.Resources.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.Square.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.csproj.GenerateResource.Cache
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.exe
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.pdb
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.exe
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.pdb

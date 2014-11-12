@@ -146,3 +146,5 @@ D:\Desktop\TornadoCapture\tessdata\tur.traineddata
 D:\Desktop\TornadoCapture\tessdata\ukr.traineddata
 D:\Desktop\TornadoCapture\tessdata\vie.traineddata
 D:\.NET Projekte\TornadoCapture_v2(2)\TornadoCapture_v2\obj\x86\Debug\TornadoCapture_v2.csprojResolveAssemblyReference.cache
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.exe
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture_v2\obj\x86\Debug\TornadoCapture.pdb

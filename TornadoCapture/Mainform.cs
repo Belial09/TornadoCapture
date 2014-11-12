@@ -24,7 +24,7 @@ namespace TornadoCapture_v2
         private const int WmHotkeyMsgID = 0x0312;
         private const int GwlExstyle = -20;
         private const int WsExToolwindow = 0x00000080;
-        private const string Website = "http://www.easytornado.com";
+        private const string Website = "http://codesnippets.fesslersoft.de";
         private readonly Infoform _info = new Infoform();
         private ArrayList _myRegisteredHotkeys;
 
@@ -60,8 +60,13 @@ namespace TornadoCapture_v2
             {
                 var enumval = Enums.EnumFromString<Enums.OcrLanguages>(buttonTag);
                 var desc = Enums.GetEnumDescription(enumval);
-                var toolstripItem = new ToolStripMenuItem(desc, null, ToolStripMenuItem_Click) {Tag = enumval};
-                oCRToolStripMenuItem.DropDownItems.Add(toolstripItem);
+                var checkpath = Path.Combine(Application.StartupPath, "tessdata");
+                var fileToCheck = String.Format("{0}.traineddata", enumval.ToString().ToLower());
+                if (Directory.GetFiles(checkpath, fileToCheck).Any())
+                {
+                    var toolstripItem = new ToolStripMenuItem(desc, null, ToolStripMenuItem_Click) { Tag = enumval };
+                    oCRToolStripMenuItem.DropDownItems.Add(toolstripItem);
+                }
             }
 
         }

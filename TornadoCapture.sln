@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TornadoCapture_v2", "TornadoCapture_v2\TornadoCapture_v2.csproj", "{EDE70767-DB6C-4F5B-BDA9-07B6828B8B12}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TornadoCapture", "TornadoCapture\TornadoCapture.csproj", "{EDE70767-DB6C-4F5B-BDA9-07B6828B8B12}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
