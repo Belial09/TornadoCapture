@@ -83,7 +83,7 @@ namespace TornadoCapture
                 {
                     var path = Path.Combine(Application.StartupPath, @"tessdata");
                     Console.WriteLine(path);
-                    using (var engine = new TesseractEngine(path, tag.ToLower(), EngineMode.Default))
+                    using (var engine = new TesseractEngine(path, tag.ToLower(), EngineMode.TesseractAndCube))
                     {
                         using (var img = new Bitmap(pictureBox1.Image))
                         {

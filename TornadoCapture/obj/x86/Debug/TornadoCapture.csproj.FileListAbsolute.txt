@@ -28,3 +28,12 @@ D:\SourceTree\githubs\TornadoCapture\obj\x86\Debug\TornadoCapture.csproj.Generat
 D:\Desktop\TornadoCapture\tessdata\tessdata_readme.txt
 D:\SourceTree\githubs\TornadoCapture\obj\x86\Debug\TornadoCapture.exe
 D:\SourceTree\githubs\TornadoCapture\obj\x86\Debug\TornadoCapture.pdb
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.csprojResolveAssemblyReference.cache
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.Forms.Kopie von Square.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.Forms.ResizeImage.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.Infoform.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.Mainform.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.OCRMask.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.Properties.Resources.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.Square.resources
+D:\.NET Projekte\TornadoCapture_GIT\TornadoCapture\obj\x86\Debug\TornadoCapture.csproj.GenerateResource.Cache
